@@ -1,0 +1,66 @@
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.btn {
+  position: relative;
+  font-size: 50px;
+  padding: 20px 100px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: linear-gradient(
+    90deg,
+    #08ff08,
+    #50e3fc,
+    #bc13fe,
+    #03a9f4,
+    #0ff0fc
+  );
+  background-size: 500%;
+  z-index: 1;
+  animation: bgAnim 7s linear infinite;
+}
+
+@keyframes bgAnim {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 500%;
+  }
+}
+
+.btn::after {
+  position: absolute;
+  content: '';
+  inset: -10px;
+  background: inherit;
+  z-index: -1;
+  border-radius: 40px;
+  opacity: 0;
+}
+.btn:hover:after {
+  opacity: 1;
+  filter: blur(20px);
+}
